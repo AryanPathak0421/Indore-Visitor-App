@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Indore City Tourist Companion Design System
+   Warm beige/brown palette for premium tourist experience */
+
+@layer base {
+  :root {
+    /* Core backgrounds - warm beige tones */
+    --background: 36 62% 89%;
+    --foreground: 25 39% 18%;
+
+    /* Cards - slightly lighter warm cream */
+    --card: 40 100% 94%;
+    --card-foreground: 25 39% 18%;
+
+    /* Popover matches cards */
+    --popover: 40 100% 94%;
+    --popover-foreground: 25 39% 18%;
+
+    /* Primary - rich brown accent */
+    --primary: 25 46% 33%;
+    --primary-foreground: 40 100% 94%;
+
+    /* Secondary - lighter brown */
+    --secondary: 25 47% 45%;
+    --secondary-foreground: 40 100% 94%;
+
+    /* Muted - soft warm tones */
+    --muted: 35 33% 75%;
+    --muted-foreground: 29 18% 36%;
+
+    /* Accent - warm cream for highlights */
+    --accent: 40 100% 94%;
+    --accent-foreground: 25 39% 18%;
+
+    /* Destructive/SOS - deep red */
+    --destructive: 0 65% 33%;
+    --destructive-foreground: 40 100% 94%;
+
+    /* Borders and inputs */
+    --border: 35 33% 75%;
+    --input: 40 100% 94%;
+    --ring: 25 46% 33%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - warm cream sidebar */
+    --sidebar-background: 40 100% 94%;
+    --sidebar-foreground: 25 39% 18%;
+    --sidebar-primary: 25 46% 33%;
+    --sidebar-primary-foreground: 40 100% 94%;
+    --sidebar-accent: 36 62% 89%;
+    --sidebar-accent-foreground: 25 39% 18%;
+    --sidebar-border: 35 33% 75%;
+    --sidebar-ring: 25 46% 33%;
+
+    /* Custom tokens for Indore theme */
+    --text-secondary: 29 18% 36%;
+    --sos-red: 0 65% 33%;
+    --heritage-gold: 40 100% 94%;
+  }
+
+  .dark {
+    --background: 25 39% 12%;
+    --foreground: 40 100% 94%;
+
+    --card: 25 39% 16%;
+    --card-foreground: 40 100% 94%;
+
+    --popover: 25 39% 16%;
+    --popover-foreground: 40 100% 94%;
+
+    --primary: 36 62% 75%;
+    --primary-foreground: 25 39% 12%;
+
+    --secondary: 25 47% 35%;
+    --secondary-foreground: 40 100% 94%;
+
+    --muted: 25 30% 25%;
+    --muted-foreground: 35 33% 65%;
+
+    --accent: 25 47% 25%;
+    --accent-foreground: 40 100% 94%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 40 100% 94%;
+
+    --border: 25 30% 25%;
+    --input: 25 30% 25%;
+    --ring: 36 62% 75%;
+
+    --sidebar-background: 25 39% 14%;
+    --sidebar-foreground: 40 100% 94%;
+    --sidebar-primary: 36 62% 75%;
+    --sidebar-primary-foreground: 25 39% 12%;
+    --sidebar-accent: 25 47% 25%;
+    --sidebar-accent-foreground: 40 100% 94%;
+    --sidebar-border: 25 30% 25%;
+    --sidebar-ring: 36 62% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-secondary {
+    color: hsl(var(--text-secondary));
+  }
+  
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-sm;
+  }
+  
+  .heritage-gradient {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
+  }
+}
