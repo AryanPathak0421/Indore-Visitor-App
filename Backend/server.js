@@ -23,6 +23,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'https://indore-visitors-app.netlify.app',
+    'https://indore-visitor-app-nqaj.vercel.app',
     'http://localhost:5173',
     'http://localhost:8080',
     'http://localhost:3000'
