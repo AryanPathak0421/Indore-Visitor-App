@@ -16,8 +16,8 @@ dist/
 build/
 
 # API endpoints and backend configuration
-backend/
-server.js
+# backend/ - removed to include Backend folder
+# server.js - removed to include server files
 package-lock.json
 yarn.lock
 
