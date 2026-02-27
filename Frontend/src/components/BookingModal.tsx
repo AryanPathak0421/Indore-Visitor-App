@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Calendar, Users, IndianRupee } from 'lucide-react';
+import { API_URL } from '@/config/api';
 
 interface BookingModalProps {
   attraction: {
@@ -50,7 +51,7 @@ const BookingModal = ({ attraction, children }: BookingModalProps) => {
         return;
       }
 
-      const response = await fetch('http://localhost:5000/api/booking/create', {
+      const response = await fetch(`${API_URL}/api/booking/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

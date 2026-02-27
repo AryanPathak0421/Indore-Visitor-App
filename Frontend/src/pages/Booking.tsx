@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Users, MapPin, Clock, ArrowLeft, Download } from 'lucide-react';
+import { API_URL } from '@/config/api';
 
 const Booking = () => {
   const { bookingId } = useParams();
@@ -14,7 +15,7 @@ const Booking = () => {
   useEffect(() => {
     const fetchBooking = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/booking/${bookingId}`);
+        const response = await fetch(`${API_URL}/api/booking/${bookingId}`);
         const data = await response.json();
         
         if (response.ok) {

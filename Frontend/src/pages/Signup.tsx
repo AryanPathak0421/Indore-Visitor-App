@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, Camera, Upload } from 'lucide-react';
+import { API_URL } from '@/config/api';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -89,7 +90,7 @@ const Signup = () => {
         formDataToSend.append('profilePhoto', profilePhoto);
       }
 
-      const response = await fetch('http://localhost:5000/api/auth/signup', {
+      const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: 'POST',
         body: formDataToSend,
       });

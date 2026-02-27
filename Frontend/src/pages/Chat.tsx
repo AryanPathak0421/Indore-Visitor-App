@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "@/config/api";
 
 interface Message {
   id: number;
@@ -112,7 +113,7 @@ export default function Chat() {
 
       // Save to backend (with error handling)
       try {
-        await fetch('http://localhost:5000/api/chat/save', {
+        await fetch(`${API_URL}/api/chat/save`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

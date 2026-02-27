@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Users, MapPin, ArrowLeft, QrCode } from 'lucide-react';
+import { API_URL } from '@/config/api';
 
 interface Booking {
   _id: string;
@@ -25,7 +26,7 @@ const MyBookings = () => {
     const fetchBookings = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/booking/my-bookings', {
+        const response = await fetch(`${API_URL}/api/booking/my-bookings`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

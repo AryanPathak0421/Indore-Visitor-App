@@ -9,6 +9,7 @@ import radissonImg from "@/assets/radisson.jpg"
 import apnaPalaceImg from "@/assets/Hotel-Apna-Palace.jpg"
 import marriottImg from "@/assets/marriott.jpg"
 import homestayImg from "@/assets/Home-stay.jpg"
+import { API_URL } from "@/config/api"
 
 interface Hotel {
   _id: string;
@@ -31,7 +32,7 @@ export default function Hotels() {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/hotels')
+        const response = await fetch(`${API_URL}/api/hotels`)
         const data = await response.json()
         
         // Add default images to hotels if they don't have images
@@ -98,7 +99,7 @@ export default function Hotels() {
         if (search) params.append('search', search)
         if (filter !== 'All') params.append('type', filter)
         
-        const response = await fetch(`http://localhost:5000/api/hotels?${params}`)
+        const response = await fetch(`${API_URL}/api/hotels?${params}`)
         const data = await response.json()
         
         // Add default images to hotels if they don't have images

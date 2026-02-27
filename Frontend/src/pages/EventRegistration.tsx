@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { API_URL } from '@/config/api';
 
 interface Event {
   id: number;
@@ -162,7 +163,7 @@ export default function EventRegistration() {
     
     try {
       // Simulate API call to backend
-      const response = await fetch('http://localhost:5000/api/events/register', {
+      const response = await fetch(`${API_URL}/api/events/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
